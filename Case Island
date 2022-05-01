@@ -1,0 +1,85 @@
+local ScreenGui = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Label = Instance.new("TextLabel")
+local Autoclicker = Instance.new("TextButton")
+local AutoRebirth = Instance.new("TextButton")
+local AutoOpenGodly3 = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+
+Main.Name = "Main"
+Main.Parent = ScreenGui
+Main.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+Main.BorderColor3 = Color3.fromRGB(255, 0, 0)
+Main.Position = UDim2.new(0.639110446, 0, 0.656736016, 0)
+Main.Size = UDim2.new(0, 325, 0, 185)
+Main.Active = true
+Main.Draggable = true
+
+Label.Name = "Label"
+Label.Parent = Main
+Label.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Label.Size = UDim2.new(0, 325, 0, 42)
+Label.Font = Enum.Font.SourceSans
+Label.Text = "Case Island Script GUI By Desire"
+Label.TextColor3 = Color3.fromRGB(255, 255, 255)
+Label.TextSize = 30.000
+
+Autoclicker.Name = "Autoclicker"
+Autoclicker.Parent = Main
+Autoclicker.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Autoclicker.BorderColor3 = Color3.fromRGB(0, 0, 255)
+Autoclicker.Position = UDim2.new(0, 0, 0.227027029, 0)
+Autoclicker.Size = UDim2.new(0, 162, 0, 69)
+Autoclicker.Font = Enum.Font.SourceSans
+Autoclicker.Text = "AutoClicker"
+Autoclicker.TextColor3 = Color3.fromRGB(255, 255, 255)
+Autoclicker.TextSize = 20.000
+Autoclicker.MouseButton1Down:connect(function()
+	while true do
+		game:GetService("ReplicatedStorage").Replication.UI.Click:FireServer()
+		wait(0.01)
+	end
+end)
+
+AutoRebirth.Name = "Auto Rebirth"
+AutoRebirth.Parent = Main
+AutoRebirth.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+AutoRebirth.BorderColor3 = Color3.fromRGB(0, 0, 255)
+AutoRebirth.Position = UDim2.new(0.498461545, 0, 0.227027029, 0)
+AutoRebirth.Size = UDim2.new(0, 161, 0, 69)
+AutoRebirth.Font = Enum.Font.SourceSans
+AutoRebirth.Text = "Auto Rebirth"
+AutoRebirth.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoRebirth.TextSize = 20.000
+AutoRebirth.MouseButton1Down:connect(function()
+	while true do
+		game:GetService("ReplicatedStorage").Replication.UI.Reborn:FireServer()
+		wait(0.01)
+	end
+end)
+
+AutoOpenGodly3.Name = "Auto Open Godly 3"
+AutoOpenGodly3.Parent = Main
+AutoOpenGodly3.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+AutoOpenGodly3.BorderColor3 = Color3.fromRGB(0, 0, 255)
+AutoOpenGodly3.Position = UDim2.new(0.230769232, 0, 0.600000024, 0)
+AutoOpenGodly3.Size = UDim2.new(0, 175, 0, 74)
+AutoOpenGodly3.Font = Enum.Font.SourceSans
+AutoOpenGodly3.Text = "Auto Open Godly"
+AutoOpenGodly3.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoOpenGodly3.TextSize = 20.000
+AutoOpenGodly3.MouseButton1Down:connect(function()
+	while true do
+		local args = {
+			[1] = 17
+		}
+
+		game:GetService("ReplicatedStorage").Replication.UI.BuyCase:FireServer(unpack(args))
+
+		game:GetService("ReplicatedStorage").Replication.UI.SkipCase:FireServer()
+		wait(0.001)
+	end
+end)
